@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\windows",
+    "\\windows\\standardizer",
+    "\\windows\\standardizer\\Assets",
+    "\\windows\\standardizer\\Assets\\common",
+    "\\windows\\standardizer\\Assets\\common\\lib",
+    "\\windows\\standardizer\\Assets\\common\\lib\\module\\dynamicLoading",
+    "\\windows\\standardizer\\Assets\\common\\src\\dynamicLoading",
+    "\\windows\\standardizer\\Assets\\fontawesome6",
+    "\\windows\\standardizer\\Assets\\fontawesome6\\fonts"
+  ],
+  "SelectedNode": "\\windows\\standardizer\\Assets\\evil-icons",
+  "PreviewInSolutionExplorer": false
+}
