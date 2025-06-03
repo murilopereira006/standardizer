@@ -1,13 +1,47 @@
-import React, {ReactElement} from "react";
-import { View } from "react-native";
+import React, { ReactElement, useEffect, useRef } from "react";
+import { Animated, TouchableWithoutFeedback, View } from "react-native";
 import { styles } from "./styles";
 
-const Swith = (): ReactElement => {
+type SwitchProps = {
+    isActive: boolean;
+    setIsActive: (value: boolean) => void;
+};
+
+const Switch = ({ isActive, setIsActive }: SwitchProps): ReactElement => {
+    
+    const toggleAnim = useRef(new Animated.Value(isActive ? 1 : 0)).current;
+
+    useEffect(() => {
+    Animated.timing(toggleAnim, {
+      toValue: isActive ? 1 : 0,
+      duration: 300,
+      useNativeDriver: true,
+    }).start();
+  }, [isActive]);
+
+  const toggleStyle = {
+    transform: [{
+      translateX: toggleAnim.interpolate({
+            inputRange: [0, 1],
+            outputRange: [20, 0]
+        })
+    }]
+  };
+  
     return (
-        <View style={styles.container}>
-            <View style={styles.toggle} />
-        </View>
+        <TouchableWithoutFeedback
+            onPress={() => setIsActive(!isActive)}
+        >
+            <View
+                style={[
+                    styles.container, 
+                    isActive ? styles.containerInactive : styles.containerActive
+                ]}
+            >
+                <Animated.View style={[styles.toggle, toggleStyle]} />
+            </View>
+        </TouchableWithoutFeedback>
     );
 };
 
-export default Swith;
+export default Switch;

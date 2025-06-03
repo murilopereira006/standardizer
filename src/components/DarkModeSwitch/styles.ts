@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import colors from "../../../colors.global";
 
 export const styles = StyleSheet.create({
   container: {
@@ -8,20 +9,25 @@ export const styles = StyleSheet.create({
     padding: 2
 },
   containerActive: {
-    backgroundColor: '#4CD964',
+    backgroundColor: colors.light.backgroundTertiary,
   },
   containerInactive: {
-    backgroundColor: '#E9E9EA',
+    backgroundColor: colors.dark.backgroundTertiary,
   },
   toggle: {
     width: 16,
     height: 16,
-    backgroundColor: 'red',
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 1 },
     shadowOpacity: 0.5,
     shadowRadius: 1,
     borderRadius: 100
+  },
+  toogleLigth: {
+    backgroundColor: colors.light.backgroundSecondary,
+  },
+  toogleDark: {
+    backgroundColor: colors.dark.divider,
   }
 });
   

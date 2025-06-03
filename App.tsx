@@ -1,38 +1,30 @@
-import React from 'react';
-import type {PropsWithChildren} from 'react';
-import {
-  StatusBar,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
-
-import {
-  Colors,
-} from 'react-native/Libraries/NewAppScreen';
-import Swith from './src/components/Switch';
-
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
+import React, { useState } from 'react';
+import { View, StyleSheet } from 'react-native';
+import DarkModeSwitch from './src/components/DarkModeSwitch';
+import colors from './colors.global';
 
 function App(): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
   return (
-    <View style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <Text>Inicio</Text>
-      <Swith />
+    <View style={[
+      styles.container, 
+      { 
+        backgroundColor: isDarkMode 
+          ? colors.dark.backgroundPrimary 
+          : colors.light.backgroundPrimary 
+      }
+    ]}>
+      <DarkModeSwitch isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 10
+  },
+});
 
 export default App;
