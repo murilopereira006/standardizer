@@ -24,11 +24,6 @@ function App(): React.JSX.Element {
         </View>
         <View style={styles.body} >
           <PatterSelection />
-          <PatterSelection />
-
-          <PatterSelection />
-
-          <PatterSelection />
 
           {/**
           <FolderPicker /> 
