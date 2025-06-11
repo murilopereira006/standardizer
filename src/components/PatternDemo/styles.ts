@@ -9,6 +9,11 @@ export const styles = StyleSheet.create({
         padding: 5,
         gap: 5
     },
+    inputBox: {
+        paddingVertical: 2,
+        paddingHorizontal: 5,
+        borderRadius: 2,
+    },
     inputBoxDark: {
         backgroundColor: colors.dark.backgroundPrimary
     },
