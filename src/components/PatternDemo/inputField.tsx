@@ -10,17 +10,11 @@ const {
     inputBoxLigth
 } = styles
 
-type SingleCharacterString<T extends string> = T extends ''
-  ? never
-  : (T extends `${infer C1}${infer C2}`
-    ? never
-    : T);
-
 type PropsInputField = {
-    value: SingleCharacterString<string>
+    value: string;
 }
 
-export const InputField = ({value}: PropsInputField) => {
+export const InputField = ({ value}: PropsInputField) => {
     const isDarkMode = useContext(DarkTheme);
   
     return (

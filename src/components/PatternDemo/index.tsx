@@ -8,7 +8,7 @@ const {container} = styles
 export const PatternDemo = () => {
   return (
     <View style={container} >
-      <InputField value='52' />
+      <InputField value='' />
       <InputField value='0' />
       <InputField value='789' />
 
